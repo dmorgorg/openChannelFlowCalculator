@@ -1,0 +1,313 @@
+/* 
+====== 
+Fonts
+======
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Catamaran:300,400&display=swap");
+
+/* 
+====== 
+Variables 
+======
+*/
+
+:root {
+    --primaryColor: #008080;
+    --bg: #fff;
+    --offBlack: #222;
+    --mainGrey: #ececec;
+    --mainSpacing: 0.3rem;
+    --lightShadow: 0.125rem 0.125rem 0.5rem 0.125rem rgba(0, 0, 0, 0.25);
+    --navShadow: -0.25px 5px 3px 0px rgba(0, 0, 0, 0.5);
+    --textShadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
+    --mathFontSize: 65%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1.25vw;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    color: var(--offBlack);
+    background: var(--bg);
+    line-height: 1.4;
+    // font-weight: 300;
+}
+
+
+/* 
+====== 
+Navbar
+======
+*/
+
+.nav {
+    margin-bottom: 1rem;
+    .nav-title {
+        font-family: "Acme", sans-serif;
+        letter-spacing: 0.05rem;
+    }
+}
+
+.nav {
+    background: var(--primaryColor);
+    padding: 0.5rem 2rem;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--navShadow);
+    justify-content: space-between;
+    font-size: 175%;
+    margin-bottom: 2rem;
+    h1.nav-title {
+        text-transform: capitalize;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        text-shadow: var(--textShadow);
+        color: white;
+        font-family: "Acme", sans-serif;
+        letter-spacing: 0.1rem;
+    }
+    .nav-links {
+        font-size: 90%;
+        min-width: 25rem;
+        display: flex;
+        cursor: pointer;
+        justify-content: space-between;
+        .nav-link {
+            text-transform: capitalize;
+            color: black;
+            margin: 0 0.75rem;
+            &:nth-child(1) {
+                margin: 0 0.75rem 0 0;
+            }
+            &:nth-child(4) {
+                margin: 0 0 0 0.75rem;
+            }
+            &:hover {
+                color: #bbb;
+            }
+            +.active {
+                color: white;
+            }
+        }
+    }
+}
+
+main {
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+}
+
+section.fig {
+    margin: 1em auto;
+    position: relative;
+    // font-size: 80%;
+    img {
+        width: 100%;
+    }
+    form {
+        input {
+            width: 3.54rem;
+            font-size: 1rem;
+            padding-left: 0.1rem;
+            padding-right: 0.1rem;
+            // cursor: pointer;
+        }
+        label {
+            // font-size: 90%;
+            position: absolute;
+            padding: 0 0.25em;
+            &.b {
+                top: 74%;
+                left: 51%;
+                background-color: #ccc;
+            }
+            &.zl {
+                top: 58.5%;
+                left: 16%;
+                background-color: #ccc;
+            }
+            &.zr {
+                top: 58%;
+                left: 80%;
+                background-color: #ccc;
+                padding: 0;
+            }
+            &.y {
+                color: white;
+                padding: 0.25em;
+                top: 40%;
+                left: 56%;
+                background-color: #088;
+            }
+            &.Q {
+                color: white;
+                padding: 0.25em;
+                top: 40%;
+                left: 40%;
+                background-color: #088;
+            }
+            &.s {
+                padding: 0.25em;
+                top: 92%;
+                left: 3%;
+                .katex {
+                    font-size: 110%;
+                }
+            }
+            &.n {
+                padding: 0.25em;
+                top: 92%;
+                left: 41%;
+                .katex {
+                    font-size: 110%;
+                }
+            }
+            &.g {
+                padding: 0.25em;
+                top: 92%;
+                right: 3%;
+                .katex {
+                    font-size: 110%;
+                }
+            }
+        }
+    }
+}
+
+.width75 {
+    position: relative;
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section.results {
+    // font-size: 80%;
+    width: 75%;
+    margin: 3rem auto 1em auto;
+}
+
+section.intro {
+    // font-size: 80%;
+    width: 80%;
+    margin: 1rem auto 0 auto;
+    p {
+        margin-top: 1em;
+    }
+}
+
+section.message {
+    // color: var(--primaryColor);
+    width: 70%;
+    margin: 2em auto;
+}
+
+section h1 {
+    text-align: left;
+    margin: 1em 0 0.5em 0;
+    color: var(--primaryColor);
+}
+
+.card {
+    background-color: white;
+    box-shadow: var(--lightShadow);
+    border: 1px solid #aaa;
+    margin: 0 auto;
+    padding: 0.25rem 1rem;
+    &+.card {
+        margin-top: 1rem;
+    }
+    .answer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        .katex {
+            font-size: 110%;
+        }
+    }
+    .solution {
+        color: var(--primaryColor);
+        font-size: 85%;
+        .katex {
+            font-size: 118%;
+        }
+    }
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+button.display-btn {
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--primaryColor);
+    // vertical-align: middle;
+    outline: none;
+}
+
+label.yQlayout input[type="radio"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+label input[type="radio"]+*::before {
+    content: "";
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.3em;
+    // border-radius: 50%;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--primaryColor)
+}
+
+// label input[type="radio"]:checked {
+//     color: red
+// }
+label input[type="radio"]:checked+*::before {
+    border-color: black;
+    background: var(--primaryColor);
+    border-width: 1px;
+}
+
+label input[type="radio"]+* {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+}
+
+label.yQlayout+label.yQlayout {
+    margin-left: 5rem;
+}
+
+section img {
+    position: relative;
+}
+
+.super {
+    position: absolute;
+    // border: 1px solid black;
+    left: 0;
+}
+
+// section {
+//     border: 1px solid black;
+// }

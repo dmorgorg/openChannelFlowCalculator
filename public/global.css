@@ -1,0 +1,336 @@
+/* 
+====== 
+Fonts
+======
+*/
+@import url("https://fonts.googleapis.com/css?family=Catamaran:300,400&display=swap");
+/* 
+====== 
+Variables 
+======
+*/
+:root {
+  --primaryColor: #008080;
+  --bg: #fff;
+  --offBlack: #222;
+  --mainGrey: #ececec;
+  --mainSpacing: 0.3rem;
+  --lightShadow: 0.125rem 0.125rem 0.5rem 0.125rem rgba(0, 0, 0, 0.25);
+  --navShadow: -0.25px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --textShadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
+  --mathFontSize: 65%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 1.25vw;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  color: var(--offBlack);
+  background: var(--bg);
+  line-height: 1.4;
+}
+
+/* 
+====== 
+Navbar
+======
+*/
+.nav {
+  margin-bottom: 1rem;
+}
+
+.nav .nav-title {
+  font-family: "Acme", sans-serif;
+  letter-spacing: 0.05rem;
+}
+
+.nav {
+  background: var(--primaryColor);
+  padding: 0.5rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: var(--navShadow);
+          box-shadow: var(--navShadow);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 175%;
+  margin-bottom: 2rem;
+}
+
+.nav h1.nav-title {
+  text-transform: capitalize;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: var(--textShadow);
+  color: white;
+  font-family: "Acme", sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+.nav .nav-links {
+  font-size: 90%;
+  min-width: 25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav .nav-links .nav-link {
+  text-transform: capitalize;
+  color: black;
+  margin: 0 0.75rem;
+}
+
+.nav .nav-links .nav-link:nth-child(1) {
+  margin: 0 0.75rem 0 0;
+}
+
+.nav .nav-links .nav-link:nth-child(4) {
+  margin: 0 0 0 0.75rem;
+}
+
+.nav .nav-links .nav-link:hover {
+  color: #bbb;
+}
+
+.nav .nav-links .nav-link + .active {
+  color: white;
+}
+
+main {
+  text-align: center;
+  margin: 0 auto;
+  width: 70%;
+}
+
+section.fig {
+  margin: 1em auto;
+  position: relative;
+}
+
+section.fig img {
+  width: 100%;
+}
+
+section.fig form input {
+  width: 3.54rem;
+  font-size: 1rem;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+}
+
+section.fig form label {
+  position: absolute;
+  padding: 0 0.25em;
+}
+
+section.fig form label.b {
+  top: 74%;
+  left: 51%;
+  background-color: #ccc;
+}
+
+section.fig form label.zl {
+  top: 58.5%;
+  left: 16%;
+  background-color: #ccc;
+}
+
+section.fig form label.zr {
+  top: 58%;
+  left: 80%;
+  background-color: #ccc;
+  padding: 0;
+}
+
+section.fig form label.y {
+  color: white;
+  padding: 0.25em;
+  top: 40%;
+  left: 56%;
+  background-color: #088;
+}
+
+section.fig form label.Q {
+  color: white;
+  padding: 0.25em;
+  top: 40%;
+  left: 40%;
+  background-color: #088;
+}
+
+section.fig form label.s {
+  padding: 0.25em;
+  top: 92%;
+  left: 3%;
+}
+
+section.fig form label.s .katex {
+  font-size: 110%;
+}
+
+section.fig form label.n {
+  padding: 0.25em;
+  top: 92%;
+  left: 41%;
+}
+
+section.fig form label.n .katex {
+  font-size: 110%;
+}
+
+section.fig form label.g {
+  padding: 0.25em;
+  top: 92%;
+  right: 3%;
+}
+
+section.fig form label.g .katex {
+  font-size: 110%;
+}
+
+.width75 {
+  position: relative;
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+section.results {
+  width: 75%;
+  margin: 3rem auto 1em auto;
+}
+
+section.intro {
+  width: 80%;
+  margin: 1rem auto 0 auto;
+}
+
+section.intro p {
+  margin-top: 1em;
+}
+
+section.message {
+  width: 70%;
+  margin: 2em auto;
+}
+
+section h1 {
+  text-align: left;
+  margin: 1em 0 0.5em 0;
+  color: var(--primaryColor);
+}
+
+.card {
+  background-color: white;
+  -webkit-box-shadow: var(--lightShadow);
+          box-shadow: var(--lightShadow);
+  border: 1px solid #aaa;
+  margin: 0 auto;
+  padding: 0.25rem 1rem;
+}
+
+.card + .card {
+  margin-top: 1rem;
+}
+
+.card .answer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+}
+
+.card .answer .katex {
+  font-size: 110%;
+}
+
+.card .solution {
+  color: var(--primaryColor);
+  font-size: 85%;
+}
+
+.card .solution .katex {
+  font-size: 118%;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+button.display-btn {
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--primaryColor);
+  outline: none;
+}
+
+label.yQlayout input[type="radio"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+label input[type="radio"] + *::before {
+  content: "";
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.3em;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--primaryColor);
+}
+
+label input[type="radio"]:checked + *::before {
+  border-color: black;
+  background: var(--primaryColor);
+  border-width: 1px;
+}
+
+label input[type="radio"] + * {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+}
+
+label.yQlayout + label.yQlayout {
+  margin-left: 5rem;
+}
+
+section img {
+  position: relative;
+}
+
+.super {
+  position: absolute;
+  left: 0;
+}
